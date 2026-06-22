@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="app-card">
+        <header class="hero">
+          <p class="eyebrow">Firestore-backed</p>
+          <h1>To-do list</h1>
+          <p class="subtitle">A minimal shared list saved in Firestore with no login and no setup screen.</p>
+        </header>
+
+        <form id="todo-form" class="todo-form">
+          <label class="sr-only" for="todo-input">New task</label>
+          <input
+            id="todo-input"
+            name="todo"
+            type="text"
+            maxlength="120"
+            placeholder="Add a task"
+            autocomplete="off"
+            required
+          />
+          <button type="submit">Add</button>
+        </form>
+
+        <p id="status" class="status" aria-live="polite">Connecting to Firestore...</p>
+
+        <ul id="todo-list" class="todo-list"></ul>
+      </section>
+    </main>
+
+    <script src="./env.js"></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
